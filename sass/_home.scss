@@ -1,0 +1,114 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--white);
+  align-content: center;
+  align-items: center;
+}
+.form {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    text-transform: uppercase;
+  }
+}
+
+#check {
+  display: none;
+}
+#check:checked + label .ball {
+  transform: translate(30px);
+}
+label {
+  display: flex;
+  align-items: center;
+  width: 4.5rem;
+  height: 1.5rem;
+  background-color: var(--very-dark-desaturated-blue-2);
+  border-radius: 50px;
+  margin-left: 1.5rem;
+  padding: 1px 3px;
+  cursor: pointer;
+}
+.ball {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--red);
+  border-radius: 50%;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.calc-display {
+  background-color: var(--very-dark-desaturated-blue-3);
+  height: 6rem;
+  border-radius: 7px;
+}
+
+.calc-button {
+  background-color: var(--very-dark-desaturated-blue-2);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  padding: 2rem;
+  gap: 1.5rem;
+  border-radius: 7px;
+  //   justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.btn {
+  padding: 1rem 0.5rem;
+  font-size: 2rem;
+  font-family: $font-family;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--light-grayish-orange);
+  box-shadow: 0px 3px 0px var(--grayish-orange);
+  color: var(--very-dark-grayish-blue);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  //   justify-self: center;
+  align-self: center;
+
+  &:nth-child(1) {
+    grid-row: 3/4;
+  }
+  &:nth-child(2) {
+    grid-row: 3/4;
+  }
+  &:nth-child(3) {
+    grid-row: 3/4;
+  }
+  &:nth-child(4) {
+    grid-row: 2/3;
+  }
+  &:nth-child(5) {
+    grid-row: 2/3;
+  }
+  &:nth-child(6) {
+    grid-row: 2/3;
+  }
+  &:nth-child(13) {
+    grid-row: 4/5;
+    grid-column: 4/5;
+  }
+  &-reset {
+    grid-column: 1/3;
+  }
+  &-reset,
+  &-del {
+    background-color: var(--desaturated-dark-blue-1);
+    box-shadow: 0px 3px 0px var(--desaturated-dark-blue-2);
+    color: $white;
+  }
+
+  &-equal {
+    box-shadow: 0px 3px 0px var(--dark-red);
+    background-color: var(--red);
+    color: var(--white);
+    grid-column: 3/5;
+  }
+}

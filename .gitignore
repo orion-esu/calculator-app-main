@@ -3,3 +3,4 @@ package.json
 package-lock.json
 style-guide.md
 README.md
+.vscode

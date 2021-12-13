@@ -89,7 +89,13 @@ label {
 .calc-display {
   background-color: var(--very-dark-desaturated-blue-3);
   height: 6rem;
-  border-radius: 7px; }
+  border-radius: 7px;
+  color: var(--white);
+  font-size: 2rem;
+  text-align: right;
+  display: grid;
+  align-content: center;
+  padding: 0 1rem 0 1rem; }
 
 .calc-button {
   background-color: var(--very-dark-desaturated-blue-2);

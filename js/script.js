@@ -19,7 +19,7 @@ keys.addEventListener('click', function (e) {
   let secondValue = Number(displayContent);
   let arr = [];
   arr.push(firstValue, operator, secondValue);
-  
+
   const calc = function (...arr) {
     if (operator === 'add') return firstValue + secondValue;
     if (operator === 'subtract') return firstValue - secondValue;
@@ -44,6 +44,7 @@ keys.addEventListener('click', function (e) {
     if (previousKeyType === 'equal') {
       return;
     }
+    console.log(arr);
     container.dataset.previousKeyType = 'operator';
   }
   if (!action) {
@@ -68,9 +69,11 @@ keys.addEventListener('click', function (e) {
   }
 
   if (action === 'delete') {
-    arr.pop();
-    secondValue = ' ';
-    display.textContent = ' ';
+    if(previousKeyType === 'number'){
+      const slice = displayContent.split('');
+      slice.pop();
+      display.textContent = slice.join('');
+    }
   }
   if (action === 'reset') {
     container.dataset.firstValue = ' ';
@@ -87,7 +90,7 @@ keys.addEventListener('click', function (e) {
       return;
     }
     display.textContent = calc(firstValue, operator, secondValue);
-
+    console.log(arr);
     container.dataset.modValue = secondValue;
     container.dataset.previousKeyType = 'equal';
   }
